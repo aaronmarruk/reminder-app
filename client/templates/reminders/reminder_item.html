@@ -1,11 +1,12 @@
 <template name="reminderItem">
 	<div class="reminder">
 		<div class="reminder__content">
-			<h3><a href="<!-- {{url}} -->">{{title}}</a><span>{{message}}</span></h3>
+			<h3><a href="{{pathFor 'reminderEdit'}}">{{title}}</a><span>{{message}}</span></h3>
 			<p>
 				submitted by {{author}}
-					{{#if ownReminder}}<a href="{{pathFor 'reminderEdit'}}">Edit</a>{{/if}}
+				{{#if ownReminder}}<a href="{{pathFor 'reminderEdit'}}">Edit</a>{{/if}}
 			</p>
+			<p>{{date}}</p>
 		</div>
 	</div>
 </template>

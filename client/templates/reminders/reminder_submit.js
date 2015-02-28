@@ -3,7 +3,8 @@ Template.reminderSubmit.events({
 		e.preventDefault();
 		var reminder = {
 			title: $(e.target).find('[name=title]').val(),
-			message: $(e.target).find('[name=message]').val()
+			message: $(e.target).find('[name=message]').val(),
+			date: $(e.target).find('[name=date]').val()
 		};
 		var errors = validateReminder(reminder); 
 		if (errors.title || errors.message)
@@ -20,6 +21,10 @@ Template.reminderSubmit.events({
     	});
 	}
 });
+
+Template.reminderSubmit.rendered = function() {
+    $('.datetimepicker').datetimepicker();
+}
 
 Template.reminderSubmit.created = function() { 
 	Session.set('reminderSubmitErrors', {});

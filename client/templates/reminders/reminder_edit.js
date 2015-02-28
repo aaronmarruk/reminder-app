@@ -11,13 +11,18 @@ Template.reminderEdit.helpers({
 	} 
 });
 
+Template.reminderEdit.rendered = function() {
+    $('.datetimepicker').datetimepicker();
+}
+
 Template.reminderEdit.events({ 
 	'submit form': function(e) {
     	e.preventDefault();
 		var currentReminderId = this._id;
 		var reminderProperties = {
 			title: $(e.target).find('[name=title]').val(),
-			message: $(e.target).find('[name=message]').val()
+			message: $(e.target).find('[name=message]').val(),
+			date: $(e.target).find('[name=date]').val()
 		}
 
 		var errors = validateReminder(reminderProperties); 

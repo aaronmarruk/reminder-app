@@ -12,13 +12,14 @@ Template.reminderSubmit.events({
 			return Session.set('reminderSubmitErrors', errors);
 		
 		Meteor.call('reminderInsert', reminder, function(error, result) { 
+			var id = result._id;
 			// display the error to the user and abort
 			if (error)
 				return throwError(error.reason);
 			// show this result but route anyway
 			if (result.reminderExists)
 				throwError('This link has already been posted');
-			Meteor.call('exampleCronJob');
+			Meteor.call('exampleCronJob', reminder, id);
 	      	Router.go('remindersList');
     	});
 	}

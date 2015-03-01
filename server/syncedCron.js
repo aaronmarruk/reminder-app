@@ -45,9 +45,13 @@ Meteor.methods({
 			      	.minute();
 			}, 
 			job: function(reminder) {
-				console.log('crunching numbers', reminder);
+				//console.log('crunching numbers', reminderParams);
+				var lookup =  Reminders.findOne(id);
+				console.log("LOOKUP", lookup);
+				Meteor.call('sendEmail', lookup);
 				// Remove the job once complete
 				SyncedCron.remove(id);
+				Meteor.call('reminderDone', id);
 			}
 		});
 	}

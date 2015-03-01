@@ -8,3 +8,20 @@ Meteor.startup(function () {
     //     text: "I just sent this email form meteor!"
     // });
 });
+
+Meteor.methods({
+    sendEmail: function(reminder) {
+
+        var title = reminder.title,
+            message = reminder.message,
+            date = reminder.date,
+            email = Meteor.users.findOne(reminder.userId).emails[0].address;
+
+        Email.send({
+            from: "reminders.later@gmail.com",
+            to: email,
+            subject: title,
+            text: message
+        });
+    }
+});

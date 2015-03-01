@@ -1,4 +1,5 @@
 Template.reminderSubmit.events({ 
+
 	'submit form': function(e) {
 		e.preventDefault();
 		var reminder = {
@@ -17,6 +18,7 @@ Template.reminderSubmit.events({
 			// show this result but route anyway
 			if (result.reminderExists)
 				throwError('This link has already been posted');
+			Meteor.call('exampleCronJob');
 	      	Router.go('remindersList');
     	});
 	}

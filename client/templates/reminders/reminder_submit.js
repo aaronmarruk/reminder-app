@@ -26,7 +26,9 @@ Template.reminderSubmit.events({
 });
 
 Template.reminderSubmit.rendered = function() {
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+    	minDate: new Date()
+    });
 }
 
 Template.reminderSubmit.created = function() { 

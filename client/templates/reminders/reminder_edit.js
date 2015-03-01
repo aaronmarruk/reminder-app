@@ -12,7 +12,9 @@ Template.reminderEdit.helpers({
 });
 
 Template.reminderEdit.rendered = function() {
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+    	minDate: new Date()
+    });
 }
 
 Template.reminderEdit.events({ 
@@ -37,6 +39,8 @@ Template.reminderEdit.events({
        		 		// display the error to the user
 					throwError(error.reason);
 				} else {
+					Meteor.call('exampleCronJob', reminderProperties, 
+						currentReminderId);
         			Router.go('remindersList', {_id: currentReminderId});
       			}
 			}

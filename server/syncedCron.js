@@ -13,6 +13,12 @@ Meteor.methods({
 			message = reminder.message,
 			date = reminder.date;
 
+		// If the job exists, we'll delete it from schedule and create a new one
+		if (SyncedCron.nextScheduledAtDate(id)) {
+			console.log("YES, WILL DELETE");
+			SyncedCron.remove(id);
+		}
+
 	   	SyncedCron.add({
 			name: id,
 			schedule: function(parser) {

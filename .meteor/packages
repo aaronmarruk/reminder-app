@@ -14,4 +14,4 @@ alethes:pages
 tsega:bootstrap3-datetimepicker
 percolate:synced-cron
 email
-accounts-ui-unstyled
+accounts-base

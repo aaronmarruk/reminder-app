@@ -9,9 +9,9 @@ mizzao:bootstrap-3
 underscore
 iron:router
 sacha:spin
-ian:accounts-ui-bootstrap-3
 accounts-password
 alethes:pages
 tsega:bootstrap3-datetimepicker
 percolate:synced-cron
 email
+accounts-ui-unstyled

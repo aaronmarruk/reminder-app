@@ -12,12 +12,14 @@
 				<a class="navbar-brand" href="{{pathFor 'remindersList'}}">Reminders</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navigation">
+				{{#if currentUser}}
 				<ul class="nav navbar-nav">
-					{{#if currentUser}}<li><a href="{{pathFor 'reminderSubmit'}}">Add reminder</a></li>{{/if}}
+					<li><a href="{{pathFor 'reminderSubmit'}}">Add reminder</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					{{> loginButtons}}
+					{{> logout}}
 				</ul> 
+				{{/if}}
 			</div>
 		</div>
 	</nav>

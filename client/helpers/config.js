@@ -1,4 +1,4 @@
-Accounts.ui.config({
- 	//passwordSignupFields: 'USERNAME_ONLY'
- 	extraSignupFields: 'username'
-});
+// Accounts.ui.config({
+//  	//passwordSignupFields: 'USERNAME_ONLY'
+//  	extraSignupFields: 'username'
+// });

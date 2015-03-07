@@ -17,3 +17,5 @@ email
 accounts-base
 mrt:flash-messages
 msavin:mongol
+aldeed:autoform
+aldeed:collection2

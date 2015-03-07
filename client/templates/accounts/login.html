@@ -1,9 +1,9 @@
 <template name="login">
-	<form id="login-form" action="action">
-		<div>
-			<input type="email" id="login-email" />
-			<input type="password" id="login-password" />
-			<input type="submit" id="login-button" value="Sign in" />
-		</div>
-	</form> 
+	{{#autoForm schema=loginSchema id="login-form" type="action"}}
+		<fieldset>
+			{{> afQuickField name="email"}}
+			{{> afQuickField name="password"}}
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</fieldset>
+	{{/autoForm}}
 </template>

@@ -1,9 +1,10 @@
 <template name="register">
-	<form id="register-form" action="action">
-		<div>
-			<input type="email" id="account-email" />
-			<input type="password" id="account-password" />
-			<input type="submit" id="create-account" value="Create an Account" />
-		</div>
-	</form>
+	{{#autoForm schema=registerSchema id="register-form" type="action"}}
+		<fieldset>
+			{{> afQuickField name="email"}}
+			{{> afQuickField name="password"}}
+			{{> afQuickField name="passwordConfirmation"}}
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</fieldset>
+	{{/autoForm}}
 </template>

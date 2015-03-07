@@ -3,8 +3,8 @@ Template.login.events({
     'submit #login-form' : function(e, t){
       e.preventDefault();
       // retrieve the input field values
-      var email = t.find('#login-email').value
-        , password = t.find('#login-password').value;
+      var email = t.find('[name=email]').value
+        , password = t.find('[name=password]').value;
 
         // Trim and validate your fields here.... 
 
@@ -23,4 +23,8 @@ Template.login.events({
       	});
          return false; 
     }
+});
+
+Template.login.helpers({
+    loginSchema: Schemas.Login
 });

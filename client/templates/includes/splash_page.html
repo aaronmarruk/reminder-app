@@ -1,6 +1,12 @@
 <template name="splashPage">
 	<div class="splash-page jumbotron">
+		{{> flashMessages}}
 		<h2>Reminder App</h2>
-		<p>Please log in.</p>
+		<hr />
+		{{> login}}
+		<hr />
+		{{> register}}
 	</div>
+
+
 </template>

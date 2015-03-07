@@ -9,12 +9,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{pathFor 'remindersList'}}">Reminders</a>
+				<a class="navbar-brand" href="{{pathFor 'reminderSubmit'}}">Reminders</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navigation">
 				{{#if currentUser}}
 				<ul class="nav navbar-nav">
 					<li><a href="{{pathFor 'reminderSubmit'}}">Add reminder</a></li>
+					<li><a href="{{pathFor 'remindersList'}}">Reminders</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					{{> logout}}

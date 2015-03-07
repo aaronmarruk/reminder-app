@@ -1,4 +1,4 @@
-<template name="reminderSubmit">
+<!-- <template name="reminderSubmit">
 	<form class="main form">
 		<div class="form-group {{errorClass 'title'}}">
 			<label class="control-label" for="title">Title</label>
@@ -25,4 +25,18 @@
 
 		<input type="submit" value="Submit" class="btn btn-primary"/>
 	</form>
+</template> -->
+
+<template name="reminderSubmit">
+	{{#autoForm schema=reminderSubmitSchema  id="reminder-submit-form" type="action"}}
+		<fieldset>
+			{{> afQuickField name="title"}}
+			{{> afQuickField name="message"}}
+			<div class="input-group datetimepicker">
+			<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+			{{> afQuickField id="date" name="date"}}
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</fieldset>
+	{{/autoForm}}
 </template>

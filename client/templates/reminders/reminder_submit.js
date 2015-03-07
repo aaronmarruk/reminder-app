@@ -41,5 +41,7 @@ Template.reminderSubmit.helpers({
 	},
 	errorClass: function (field) {
 		return !!Session.get('reminderSubmitErrors')[field] ? 'has-error' : '';
-	} 
+	},
+
+	reminderSubmitSchema: Schemas.ReminderSubmit
 });

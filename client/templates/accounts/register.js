@@ -16,6 +16,8 @@ Template.register.events({
             } else {
             // Success. Account has been created and the user
             // has logged in successfully. 
+            alert('Thanks for signing up, at some point we will give you a tou'+
+                'r, but for now, go forth and create reminders!');
             }
         });
         return false;

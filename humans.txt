@@ -1,0 +1,22 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+
+# Reminders App
+
+## Developers:
+Aaron Marr
+
+
+# KICKOFF TEAM
+
+ * Zander Martineau -- Creative Technologist -- http://twitter.com/MrMartineau
+ * Ashley Nolan -- Creative Technologist -- http://twitter.com/dragongraphics
+
+
+# TECHNOLOGY COLOPHON
+
+ * HTML, CSS
+ * Grunt.js
+ * Normalize.css, jQuery, Modernizr
+ * Sublime Text

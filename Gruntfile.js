@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 			src : '_grunt-configs/*.js',
 
 			css : {
-				distDir : 'css',     // <%=config.css.distDir%>
+				distDir : 'app/client/stylesheets',     // <%=config.css.distDir%>
 				srcFile : 'kickoff', // <%=config.css.srcFile%>
 				scssDir : 'scss'     // <%=config.css.scssDir%>
 			},

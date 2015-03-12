@@ -1,9 +1,26 @@
 <template name="login">
-	{{#autoForm schema=loginSchema id="login-form"}}
-		<fieldset>
-			{{> afQuickField name="email"}}
-			{{> afQuickField name="password"}}
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</fieldset>
-	{{/autoForm}}
+	<div class="l-container">
+		<div class="g-row">
+			<div class="g-col g-span8 g-col--centered">
+				{{#autoForm schema=loginSchema id="login-form" class="form"}}
+					<fieldset class="form-fieldset">
+						<div class="form-group">
+							<legend class="form-legend">Login</legend>
+						</div>
+						<div class="form-group">
+							{{> afFieldInput name="email" type="text" class="form-input" placeholder="you@example.com"}}
+						</div>
+						<div class="form-group">
+							{{> afFieldInput name="password" type="text" class="form-input" placeholder="password..."}}
+						</div>
+						<div class="form-group">
+							<div class="form-actions text_centre">
+								<button type="submit" class="btn btn-primary">Login</button>
+							</div>
+						</div>
+					</fieldset>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
 </template>

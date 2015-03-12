@@ -1,42 +1,66 @@
-<!-- <template name="reminderSubmit">
-	<form class="main form">
-		<div class="form-group {{errorClass 'title'}}">
-			<label class="control-label" for="title">Title</label>
-			<div class="controls">
-				<input name="title" id="title" type="text" value="" placeholder="What do you need reminding of?" class="form-control"/>
-				<span class="help-block">{{errorMessage 'title'}}</span>
-			</div>
-		</div>
-		<div class="form-group {{errorClass 'message'}}">
-			<label class="control-label" for="message">Message</label>
-			<div class="controls">
-				<input name="message" id="message" type="text" value="" placeholder="Your message" class="form-control"/>
-				<span class="help-block">{{errorMessage 'message'}}</span>
-			</div>
-		</div>
+<!--         <form action="#" class="form">
+            <fieldset class="form-fieldset">
+                <legend class="form-legend">Your form</legend>
+                <div class="form-controlGroup">
+                    <label class="form-label" for="text">Text</label>
+                    <div class="form-controlGroup-inputWrapper">
+                        <input class="form-input" type="text" id="text" placeholder="Some text" required/>
+                    </div>
+                </div>
+                <div class="form-controlGroup">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="form-controlGroup-inputWrapper">
+                        <input class="form-input" type="email" id="email" placeholder="tech@tmw.co.uk" required/>
+                    </div>
+                </div>
 
-		<div class="form-group {{errorClass 'datetimepicker'}}">
-			<div class="input-group datetimepicker">
-	    		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-	   		 	<input name="date" id="date" class="set-due-date form-control" type="text"/>
-	   		 	<span class="help-block">{{errorMessage 'datetimepicker'}}</span>
-	  		</div>
-	  	</div>
+                <div class="form-controlGroup">
+                    <label class="form-label" for="comments">Textarea</label>
+                    <div class="form-controlGroup-inputWrapper">
+                        <textarea class="form-input form-input--textarea" id="comments" rows="3" cols="50"></textarea>
+                    </div>
+                </div>
+            </fieldset>
 
-		<input type="submit" value="Submit" class="btn btn-primary"/>
-	</form>
-</template> -->
+            <div class="form-actions text_centre">
+                <input type="submit" value="Submit" class="btn btn--primary" />
+                <input type="reset" class="btn" value="Cancel" />
+            </div>
+        </form> -->
 
 <template name="reminderSubmit">
-	{{#autoForm schema=reminderSubmitSchema  id="reminder-submit-form"}}
-		<fieldset>
-			{{> afQuickField name="title"}}
-			{{> afQuickField name="message"}}
-			<div class="input-group datetimepicker">
-			<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-			{{> afQuickField id="date" name="date"}}
+	<div class="l-container">
+		<div class="g-row">
+			<div class="g-col g-span8 g-col--centered">
+				{{#autoForm schema=reminderSubmitSchema class="form" id="reminder-submit-form"}}
+					<fieldset class="form-fieldset">
+						<div class="form-group">
+							<legend class="form-legend">New reminder</legend>
+						</div>
+						<div class="form-group {{errorClass 'title'}}">
+							{{> afFieldInput name="title" id="title" type="text" class="form-input"}}
+							<span class="help-block">{{errorMessage 'title'}}</span>
+						</div>
+						<div class="input-group form-group datetimepicker {{errorClass 'date'}}">
+							<!-- <span style="background: black; padding: 20px;"><i class="fa fa-calendar"></i></span> -->
+							<span class="btn btn--primary input-group-addon" >Select date &amp; time</span>
+							{{> afFieldInput id="date" name="date"}}
+							<span class="help-block">{{errorMessage 'date'}}</span>
+						</div>
+						<div class="form-group {{errorClass 'message'}}">
+							{{> afFieldInput name="message" rows="5" type="textarea" placeholder="Your message..." class="form-input form-input--textarea"}}
+							<span class="help-block">{{errorMessage 'message'}}</span>
+						</div>
+						<div class="form-group">
+							<div class="form-actions text_centre">
+				        		<input type="submit" value="Submit" class="btn btn--primary" />
+				        		<input type="reset" class="btn" value="Cancel" />
+				    		</div>
+						</div>
+
+					</fieldset>
+				{{/autoForm}}
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</fieldset>
-	{{/autoForm}}
+		</div>
+	</div>
 </template>

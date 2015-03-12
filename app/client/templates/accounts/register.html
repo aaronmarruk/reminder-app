@@ -1,10 +1,29 @@
 <template name="register">
-	{{#autoForm schema=registerSchema id="register-form"}}
-		<fieldset>
-			{{> afQuickField name="email"}}
-			{{> afQuickField name="password"}}
-			{{> afQuickField name="passwordConfirmation"}}
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</fieldset>
-	{{/autoForm}}
+	<div class="l-container">
+		<div class="g-row">
+			<div class="g-col g-span8 g-col--centered">
+				{{#autoForm schema=registerSchema id="register-form" class="form"}}
+					<fieldset class="form-fieldset">
+						<div class="form-group">
+							<legend class="form-legend">Sign up</legend>
+						</div>
+						<div class="form-group">
+							{{> afFieldInput name="email" type="text" class="form-input" placeholder="you@example.com"}}
+						</div>
+						<div class="form-group">
+							{{> afFieldInput name="password" type="text" class="form-input" placeholder="Password..."}}
+						</div>
+						<div class="form-group">
+							{{> afFieldInput name="passwordConfirmation" type="text" class="form-input" placeholder="Confirm password..."}}
+						</div>
+						<div class="form-group">
+							<div class="form-actions text_centre">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</fieldset>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
 </template>

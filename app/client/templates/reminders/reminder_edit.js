@@ -8,7 +8,9 @@ Template.reminderEdit.helpers({
 	},
 	errorClass: function (field) {
 		return !!Session.get('reminderEditErrors')[field] ? 'has-error' : '';
-	} 
+	},
+
+	reminderEditSchema: Schemas.ReminderEdit
 });
 
 Template.reminderEdit.rendered = function() {

@@ -1,3 +1,24 @@
+Template.reminderSubmit.created = function() { 
+	Session.set('reminderSubmitErrors', {});
+}
+
+Template.reminderSubmit.helpers({ 
+	errorMessage: function(field) {
+		return Session.get('reminderSubmitErrors')[field]; 
+	},
+	errorClass: function (field) {
+		return !!Session.get('reminderSubmitErrors')[field] ? 'has-error' : '';
+	},
+
+	reminderSubmitSchema: Schemas.ReminderSubmit
+});
+
+Template.reminderSubmit.rendered = function() {
+    $('.datetimepicker').datetimepicker({
+    	minDate: new Date()
+    });
+}
+
 Template.reminderSubmit.events({ 
 
 	'submit form': function(e) {
@@ -25,23 +46,7 @@ Template.reminderSubmit.events({
 	}
 });
 
-Template.reminderSubmit.rendered = function() {
-    $('.datetimepicker').datetimepicker({
-    	minDate: new Date()
-    });
-}
 
-Template.reminderSubmit.created = function() { 
-	Session.set('reminderSubmitErrors', {});
-}
 
-Template.reminderSubmit.helpers({ 
-	errorMessage: function(field) {
-		return Session.get('reminderSubmitErrors')[field]; 
-	},
-	errorClass: function (field) {
-		return !!Session.get('reminderSubmitErrors')[field] ? 'has-error' : '';
-	},
 
-	reminderSubmitSchema: Schemas.ReminderSubmit
-});
+

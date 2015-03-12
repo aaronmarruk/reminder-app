@@ -50,3 +50,19 @@ Schemas.ReminderSubmit = new SimpleSchema({
         label: "Time / Date"
     }
 });
+
+Schemas.ReminderEdit = new SimpleSchema({
+    title: {
+        type: String,
+        label: "Title",
+        max: 200
+    },
+    message: {
+        type: String,
+        label: "Message"
+    },
+    date: {
+        type: String,
+        label: "Time / Date"
+    }
+});

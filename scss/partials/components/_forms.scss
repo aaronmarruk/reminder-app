@@ -24,6 +24,7 @@
  */
 .form {
 	margin: 0 0 $baseline;
+	background: $panel-bg;
 }
 
 .form-fieldset {
@@ -35,13 +36,13 @@
 .form-legend {
 	display: block;
 	width: 100%;
-	padding: 0;
-	margin-bottom: $baseline;
+	padding: $baseline 0;
 	@include font-size($type-large);
 	line-height: $leading-base;
 	color: $label-color;
 	border: 0;
-	border-bottom: 1px solid #eee;
+	margin: 0 0 $baseline;
+ 	border-bottom: 1px solid #bbb;
 	white-space: normal;
 
 	// Small
@@ -79,7 +80,10 @@
 	}
 }
 
-// Any form inputs
+.form-group {
+	padding: 0 $baseline 20px;
+}
+
 .form-input {
 	display: block;
 	width: 100%;
@@ -287,10 +291,10 @@ input[type="submit"] {
  * Form actions
  */
 .form-actions {
-	padding: $baseline 20px;
+	padding: $baseline 0;
 	margin-top: $baseline;
 	margin-bottom: $baseline;
-	background-color: $form-actions-bg;
+	//background-color: $form-actions-bg;
 	border-top: 1px solid #ddd;
 
 	.btn {
@@ -360,7 +364,7 @@ input[type="submit"] {
 		// Move over all input controls and content
 		.form-controlGroup-inputWrapper {
 			margin-left: 160px;
-
+			padding: $baseline 20px;
 			&:first-child {
 				padding-left: 160px;
 			}

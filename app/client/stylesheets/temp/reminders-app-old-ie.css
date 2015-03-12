@@ -821,7 +821,8 @@ input[type="submit"].btn--block, input[type="reset"].btn--block, input[type="but
   	</div>
  */
 .form {
-  margin: 0 0 28px; }
+  margin: 0 0 28px;
+  background: #EFF2F3; }
 
 .form-fieldset {
   padding: 0;
@@ -831,14 +832,14 @@ input[type="submit"].btn--block, input[type="reset"].btn--block, input[type="but
 .form-legend {
   display: block;
   width: 100%;
-  padding: 0;
-  margin-bottom: 28px;
+  padding: 28px 0;
   font-size: 25px;
   font-size: 1.25rem;
   line-height: 1.4;
   color: #444;
   border: 0;
-  border-bottom: 1px solid #eee;
+  margin: 0 0 28px;
+  border-bottom: 1px solid #bbb;
   white-space: normal; }
   .form-legend small {
     font-size: 16px;
@@ -864,6 +865,9 @@ input[type="submit"].btn--block, input[type="reset"].btn--block, input[type="but
   .form-label small {
     font-weight: normal;
     color: #919191; }
+
+.form-group {
+  padding: 0 28px 20px; }
 
 .form-input {
   display: block;
@@ -1001,10 +1005,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
  * Form actions
  */
 .form-actions {
-  padding: 28px 20px;
+  padding: 28px 0;
   margin-top: 28px;
   margin-bottom: 28px;
-  background-color: #f5f5f5;
   border-top: 1px solid #ddd; }
   .form-actions .btn, .form-actions .tabs a, .tabs .form-actions a {
     margin-right: 10px; }
@@ -1076,7 +1079,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   padding-top: 5px;
   text-align: right; }
 .form--horizontal .form-controlGroup-inputWrapper {
-  margin-left: 160px; }
+  margin-left: 160px;
+  padding: 28px 20px; }
   .form--horizontal .form-controlGroup-inputWrapper:first-child {
     padding-left: 160px; }
 .form--horizontal .form-helpBlock {
@@ -1459,7 +1463,7 @@ img, object, embed, video {
   max-width: 100%;
   margin-bottom: 28px;
   border-spacing: 0;
-  background-color: #f1f1f1; }
+  background-color: #fff; }
   .table > thead th, .table > thead td, .table > tbody th, .table > tbody td, .table > tfoot th, .table > tfoot td {
     padding: 8px;
     line-height: 28px;
@@ -1475,7 +1479,7 @@ img, object, embed, video {
   .table > tbody + tbody {
     border-top: 2px solid #ddd; }
   .table .table {
-    background-color: #f1f1f1; }
+    background-color: #fff; }
 
 th {
   text-align: left; }
@@ -1592,10 +1596,10 @@ pre {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  background-color: #d7d7d7; }
+  background-color: #e6e6e6; }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b8b8b;
+  background: #999999;
   cursor: pointer;
   border-radius: 5px; }
 
@@ -1610,7 +1614,7 @@ pre {
  * Global app/site styles
  */
 body {
-  background-color: #f1f1f1; }
+  background-color: #fff; }
 
 /**
  * Default layout container

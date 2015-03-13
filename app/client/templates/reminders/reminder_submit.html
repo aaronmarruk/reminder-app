@@ -37,13 +37,13 @@
 						<div class="form-group">
 							<legend class="form-legend">New reminder</legend>
 						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='title'}} has-error{{/if}}">
+						<div class="form-group {{#if afFieldIsInvalid name='title'}} form-controlGroup--error{{/if}}">
 							{{> afFieldInput name="title" id="title" type="text" class="form-input"}}
 							{{#if afFieldIsInvalid name='title'}}
       							<span class="help-block">{{afFieldMessage name='title'}}</span>
       						{{/if}}
 						</div>
-						<div class="input-group form-group datetimepicker {{#if afFieldIsInvalid name='date'}} has-error{{/if}}">
+						<div class="input-group form-group datetimepicker {{#if afFieldIsInvalid name='date'}} form-controlGroup--error{{/if}}">
 							<!-- <span style="background: black; padding: 20px;"><i class="fa fa-calendar"></i></span> -->
 							<span class="btn btn--primary input-group-addon" >Select date &amp; time</span>
 							{{> afFieldInput id="date" name="date"}}
@@ -51,7 +51,7 @@
       							<span class="help-block">{{afFieldMessage name='date'}}</span>
       						{{/if}}
 						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='message'}} has-error{{/if}}">
+						<div class="form-group {{#if afFieldIsInvalid name='message'}} form-controlGroup--error{{/if}}">
 							{{> afFieldInput name="message" rows="5" type="textarea" placeholder="Your message..." class="form-input form-input--textarea"}}
 							{{#if afFieldIsInvalid name='message'}}
       							<span class="help-block">{{afFieldMessage name='message'}}</span>

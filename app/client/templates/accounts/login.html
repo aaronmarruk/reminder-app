@@ -7,13 +7,13 @@
 						<div class="form-group">
 							<legend class="form-legend">Login</legend>
 						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='email'}} has-error{{/if}}">
+						<div class="form-group {{#if afFieldIsInvalid name='email'}} form-controlGroup--error{{/if}}">
 							{{> afFieldInput name="email" type="text" class="form-input" placeholder="you@example.com"}}
 							{{#if afFieldIsInvalid name='email'}}
       							<span class="help-block">{{afFieldMessage name='email'}}</span>
       						{{/if}}
 						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='password'}} has-error{{/if}}">
+						<div class="form-group {{#if afFieldIsInvalid name='password'}} form-controlGroup--error{{/if}}">
 							{{> afFieldInput name="password" type="text" class="form-input" placeholder="password..."}}
 							{{#if afFieldIsInvalid name='password'}}
       							<span class="help-block">{{afFieldMessage name='password'}}</span>

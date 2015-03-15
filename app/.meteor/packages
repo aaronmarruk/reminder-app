@@ -10,7 +10,6 @@ iron:router
 sacha:spin
 accounts-password
 alethes:pages
-tsega:bootstrap3-datetimepicker
 percolate:synced-cron
 email
 accounts-base

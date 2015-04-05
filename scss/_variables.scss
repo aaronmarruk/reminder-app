@@ -21,7 +21,7 @@ $font-size-base-px             : $font-size-base * 1px;
 $font-size-base-narrow         : $font-size-base - 2;
 $font-size-base-narrow-px      : $font-size-base-narrow * 1px;
 
-$leading-base                  : 1.4;
+$leading-base                  : 1.5;
 $line-height-base              : round($font-size-base * $leading-base); // 20 * 1.4
 $baseline                      : $line-height-base * 1px;
 
@@ -42,12 +42,12 @@ $type-jumbo                    : modular-scale($font-size-base, 4, $type-scale);
 $font-weight-bold             : bold;
 
 /* Font stacks */
-$font-family-sans             : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans             : "Lato", Helvetica, Arial, sans-serif;
 $font-family-serif            : Georgia, "Times New Roman", Times, serif;
 $font-family-mono             : Menlo, Monaco, "Courier New", monospace;
 
 $font-family-base             : $font-family-sans;
-$font-family-alt              : $font-family-serif;
+$font-family-alt              : $font-family-sans;
 
 $font-family-headings         : inherit; // using inherit will use $font-family-base for all headings
 $font-weight-headings         : bold;    // instead of browser default, bold

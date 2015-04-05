@@ -1,32 +1,29 @@
 <template name="login">
-	<div class="l-container">
-		<div class="g-row">
-			<div class="g-col g-span8 g-col--centered">
-				{{#autoForm schema=loginSchema id="login-form" class="form"}}
-					<fieldset class="form-fieldset">
-						<div class="form-group">
-							<legend class="form-legend">Login</legend>
-						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='email'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="email" type="text" class="form-input" placeholder="you@example.com"}}
-							{{#if afFieldIsInvalid name='email'}}
-      							<span class="help-block">{{afFieldMessage name='email'}}</span>
-      						{{/if}}
-						</div>
-						<div class="form-group {{#if afFieldIsInvalid name='password'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="password" type="text" class="form-input" placeholder="password..."}}
-							{{#if afFieldIsInvalid name='password'}}
-      							<span class="help-block">{{afFieldMessage name='password'}}</span>
-      						{{/if}}
-						</div>
-						<div class="form-group">
-							<div class="form-actions text_centre">
-								<button type="submit" class="btn btn-primary">Login</button>
-							</div>
-						</div>
-					</fieldset>
-				{{/autoForm}}
+	{{#autoForm schema=loginSchema id="login-form" class="form"}}
+		<fieldset class="form-fieldset">
+			<div class="form-group">
+				<legend class="form-legend">Login to Remindly</legend>
 			</div>
-		</div>
-	</div>
+			<div class="form-group {{#if afFieldIsInvalid name='email'}} form-controlGroup--error{{/if}}">
+				<label class="form-label">Email</label>
+				{{> afFieldInput name="email" type="text" class="form-input" placeholder="you@example.com"}}
+				{{#if afFieldIsInvalid name='email'}}
+						<span class="help-block">{{afFieldMessage name='email'}}</span>
+					{{/if}}
+			</div>
+			<div class="form-group {{#if afFieldIsInvalid name='password'}} form-controlGroup--error{{/if}}">
+				<label class="form-label">Password</label>
+				{{> afFieldInput name="password" type="password" class="form-input" placeholder="password..."}}
+				{{#if afFieldIsInvalid name='password'}}
+						<span class="help-block">{{afFieldMessage name='password'}}</span>
+					{{/if}}
+			</div>
+			<div class="form-group">
+				<div class="form-actions text_centre">
+					<button type="submit" class="button button--primary">Login</button>
+				</div>
+				Don't have an account? <a href="/sign-up">Create a remindly account</a>
+			</div>
+		</fieldset>
+	{{/autoForm}}
 </template>

@@ -5,33 +5,55 @@
 				{{#autoForm schema=reminderEditSchema class="form" id="reminder-edit-form"}}
 					<fieldset class="form-fieldset">
 						<div class="form-group">
-							<legend class="form-legend">Edit reminder</legend>
+							<legend class="form-legend"><h2>Edit reminder</h2></legend>
 						</div>
 						<div class="form-group {{#if afFieldIsInvalid name='title'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="title" id="title" type="text" class="form-input" value=title }}
+							<label class="form-label">Title</label>
+							{{> afFieldInput 
+								name="title" 
+								id="title" 
+								placeholder="E.g. file tax return" 
+								type="text" 
+								class="form-input" 
+								value=title 
+							}}
 							{{#if afFieldIsInvalid name='title'}}
       							<span class="help-block">{{afFieldMessage name='title'}}</span>
       						{{/if}}
 						</div>
-						<div class="input-group form-group datetimepicker {{#if afFieldIsInvalid name='date'}} form-controlGroup--error{{/if}}">
-							<!-- <span style="background: black; padding: 20px;"><i class="fa fa-calendar"></i></span> -->
-							<span class="btn btn--primary input-group-addon" >Select date &amp; time</span>
-							{{> afFieldInput id="date" name="date" value=date }}
+
+						<div class="input-group form-group datetimepicker clearfix {{#if afFieldIsInvalid name='date'}} form-controlGroup--error{{/if}}">
+							<span class="input-group-addon button button--primary">Select date &amp; time</span>
+							{{> afFieldInput 
+								id="date"
+								type="text"
+								name="date" 
+								class="form-input form-input--as-text form-input--datetime-selection" 
+								value=date
+							}}
 							{{#if afFieldIsInvalid name='date'}}
       							<span class="help-block">{{afFieldMessage name='date'}}</span>
       						{{/if}}
 						</div>
 						<div class="form-group {{#if afFieldIsInvalid name='message'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="message" rows="5" type="textarea" placeholder="Your message..." class="form-input form-input--textarea" value=message }}
+							<label class="form-label">Message</label>
+							{{> afFieldInput 
+								name="message" 
+								rows="5" 
+								type="textarea" 
+								class="form-input form-input--textarea" 
+								placeholder="E.g. fill it in by Jan 31st" 
+								value=message 
+							}}
 							{{#if afFieldIsInvalid name='message'}}
       							<span class="help-block">{{afFieldMessage name='message'}}</span>
       						{{/if}}
 						</div>
 						<div class="form-group">
 							<div class="form-actions text_centre">
-				        		<input type="submit" value="Submit" class="btn btn--primary" />
-				        		<input type="reset" class="btn" value="Cancel" />
-				        		<a class="btn btn-danger delete" href="#">Delete reminder</a>
+				        		<input type="submit" value="Submit" class="button button--primary" />
+				        		<input type="reset" class="button" value="Cancel" />
+				        		<a class="button--natural button--as-text delete" href="#">Delete reminder</a>
 				    		</div>
 						</div>
 					</fieldset>

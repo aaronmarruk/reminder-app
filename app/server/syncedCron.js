@@ -9,6 +9,8 @@ Meteor.startup(function () {
 Meteor.methods({
 	exampleCronJob: function(reminder, id) {
 
+		console.log("exampleCronJob: reminder, id", reminder, id);
+
 		var title = reminder.title,
 			message = reminder.message,
 			date = reminder.date;

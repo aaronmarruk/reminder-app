@@ -14,9 +14,17 @@ Template.reminderEdit.helpers({
 });
 
 Template.reminderEdit.rendered = function() {
+	
     $('.datetimepicker').datetimepicker({
     	minDate: new Date()
     });
+    $('.collapse').collapse('toggle');
+
+    // After apllying the date time picker 
+    // we must reassign date value
+    var date = this.data.date;
+    var el = $(this.firstNode);
+    el.find('[name=date]').val(date);
 }
 
 Template.reminderEdit.events({ 

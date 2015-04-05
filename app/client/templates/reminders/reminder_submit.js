@@ -14,9 +14,11 @@ Template.reminderSubmit.helpers({
 });
 
 Template.reminderSubmit.rendered = function() {
+	console.log("Reminder Submit render");
     $('.datetimepicker').datetimepicker({
     	minDate: new Date()
     });
+    $('.collapse').collapse('toggle');
 }
 
 Template.reminderSubmit.events({ 

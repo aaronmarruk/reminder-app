@@ -1,0 +1,39 @@
+.app-header{
+	background: $site-header-bg;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+.app-content{
+	padding-top: 5rem;
+}
+
+.app-title{
+	vertical-align: middle;
+  	line-height: 2.5rem;
+  	font-style: italic;
+}
+
+.container{
+	background: #fff;
+}
+
+.reminders-list{
+	border-top: 1px solid $table-border;
+}
+
+.reminder{
+	padding-top: $baseline;
+	border-bottom: 1px solid $table-border;
+}
+
+.reminder__title{
+	margin-bottom: 0.5rem;
+}
+
+
+
+// .reminder__date{
+// 	float: right;
+// }

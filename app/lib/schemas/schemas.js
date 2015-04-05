@@ -46,8 +46,7 @@ Schemas.ReminderSubmit = new SimpleSchema({
         label: "Message"
     },
     date: {
-        type: String,
-        label: "Time / Date"
+        type: String
     }
 });
 

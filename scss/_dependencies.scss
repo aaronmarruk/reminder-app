@@ -48,6 +48,7 @@
  * Code
  * Skip navigation
  * Scrollbars
+ * Bootstrap table, dropdown (Needed for bs-time-date-picker)
  */
 @import "partials/components/buttons";
 @import "partials/components/grid"; // See http://tmwagency.github.io/kickoff/docs/grid.html for more info
@@ -63,6 +64,12 @@
 @import "partials/components/code";
 @import "partials/components/skip-navigation";
 @import "partials/components/scrollbars";
+
+@import "partials/components/glyphicons";
+@import "partials/components/bootstrap-dropdown";
+@import "partials/components/bootstrap-datetime-picker";
+@import "partials/components/bootstrap-table";
+@import "partials/components/bootstrap-input-group";
 
 
 /**
@@ -82,8 +89,8 @@
  * Views
  * =================================
  */
-//@import "views/home";
-//@import "views/contact";
+@import "views/home";
+@import "views/app";
 
 
 /**

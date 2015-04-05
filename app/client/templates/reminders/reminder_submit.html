@@ -35,32 +35,44 @@
 				{{#autoForm schema=reminderSubmitSchema class="form" id="reminder-submit-form"}}
 					<fieldset class="form-fieldset">
 						<div class="form-group">
-							<legend class="form-legend">New reminder</legend>
+							<legend class="form-legend"><h2>New reminder</h2></legend>
 						</div>
 						<div class="form-group {{#if afFieldIsInvalid name='title'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="title" id="title" type="text" class="form-input"}}
+                            <label class="form-label">Title</label>
+							{{> afFieldInput 
+                                name="title" 
+                                placeholder="E.g. file tax return" 
+                                id="title" type="text" 
+                                class="form-input"
+                            }}
 							{{#if afFieldIsInvalid name='title'}}
       							<span class="help-block">{{afFieldMessage name='title'}}</span>
       						{{/if}}
 						</div>
-						<div class="input-group form-group datetimepicker {{#if afFieldIsInvalid name='date'}} form-controlGroup--error{{/if}}">
-							<!-- <span style="background: black; padding: 20px;"><i class="fa fa-calendar"></i></span> -->
-							<span class="btn btn--primary input-group-addon" >Select date &amp; time</span>
-							{{> afFieldInput id="date" name="date"}}
+						
+						<div class="input-group datetimepicker clearfix form-group {{#if afFieldIsInvalid name='date'}} form-controlGroup--error{{/if}}">
+						    <span class="input-group-addon button button--primary">Select time &amp; date</span>
+							{{> afFieldInput 
+                            id="date" 
+                            name="date" 
+                            class="set-due-date form-input hidden form-input--state-disabled form-input--as-text form-input--datetime-selection"
+                            }}
 							{{#if afFieldIsInvalid name='date'}}
       							<span class="help-block">{{afFieldMessage name='date'}}</span>
       						{{/if}}
-						</div>
+      					</div>
+
 						<div class="form-group {{#if afFieldIsInvalid name='message'}} form-controlGroup--error{{/if}}">
-							{{> afFieldInput name="message" rows="5" type="textarea" placeholder="Your message..." class="form-input form-input--textarea"}}
+                            <label class="form-label">Message</label>
+							{{> afFieldInput name="message" rows="5" type="textarea" placeholder="E.g. fill it in by Jan 31st" class="form-input form-input--textarea"}}
 							{{#if afFieldIsInvalid name='message'}}
       							<span class="help-block">{{afFieldMessage name='message'}}</span>
       						{{/if}}
 						</div>
 						<div class="form-group">
 							<div class="form-actions text_centre">
-				        		<input type="submit" value="Submit" class="btn btn--primary" />
-				        		<input type="reset" class="btn" value="Cancel" />
+				        		<input type="submit" value="Submit" class="button button--primary" />
+				        		<input type="reset" class="button" value="Cancel" />
 				    		</div>
 						</div>
 

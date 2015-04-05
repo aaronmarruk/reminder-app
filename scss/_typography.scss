@@ -18,8 +18,10 @@
  * http://lamb.cc/typograph/
  *
  */
-
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
 html {
+	background: #fff;
 	font-size: $font-size-base-narrow-px;
 	-webkit-text-size-adjust: 100%;
 
@@ -29,11 +31,12 @@ html {
 }
 
 body {
+	background: #fff;
 	font-family: $font-family-base;
 	@include font-size($type-base);
 	line-height: $leading-base;
 	color: $color-text;
-
+	font-weight: 400;
 	// Add ligatures
 	font-feature-settings: "liga","dlig";
 
@@ -41,9 +44,9 @@ body {
 	// Enable only one of them if you need them
 	// =========================================
 	// 1.
-	// -webkit-font-smoothing: antialiased;
-	//    -moz-font-smoothing: antialiased;
-	// font-smooth:always;
+	-webkit-font-smoothing: antialiased;
+	   -moz-font-smoothing: antialiased;
+	font-smooth:always;
 
 	// 2.
 	// opacity: 0.99;
@@ -76,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: $font-weight-headings;
 	line-height: $line-height-headings;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
-
+	color: $color-heading;
 	small {
 		font-weight: normal;
 	}

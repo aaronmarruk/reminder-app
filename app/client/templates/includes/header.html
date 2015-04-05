@@ -1,25 +1,23 @@
 <template name="header">
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="coll
-				apse" data-target="#navigation">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="{{pathFor 'reminderSubmit'}}">Reminders</a>
+	<nav class="app-header" role="navigation">
+		<div class="g-row">
+			<div class="g-col g-span4">
+				<a class="navbar-brand button button--header" href="{{pathFor 'remindersList'}}">Reminders</a>
 			</div>
-			<div class="collapse navbar-collapse" id="navigation">
+			<div class="g-col g-span4" style="text-align: center;">
+				<h4 class="app-title">Reminders App</h4>
+			</div>
+			<div class="g-col g-span4" style="text-align: right;">
 				{{#if currentUser}}
-				<ul class="nav navbar-nav">
-					<li><a href="{{pathFor 'reminderSubmit'}}">Add reminder</a></li>
-					<li><a href="{{pathFor 'remindersList'}}">Reminders</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					{{> logout}}
-				</ul> 
+					<a class="button button--header" href="{{pathFor 'reminderSubmit'}}"><span class="glyphicon-plus"></span></a>
+					<a class="button button--header dropdown-toggle" data-toggle="dropdown" href="{{pathFor 'remindersList'}}">{{userEmail}}</a>
+						<ul class="dropdown-menu dropdown-menu--align-right" role="menu" aria-labelledby="drop6">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
+							<li role="presentation" class="divider"></li>
+							<li role="presentation">{{> logout}}</li>
+						</ul>
 				{{/if}}
 			</div>
 		</div>

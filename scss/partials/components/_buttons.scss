@@ -17,7 +17,7 @@
  *10. Prevents from inheriting default anchor styles.
  */
 
-.btn {
+.button {
 	display: inline-block;       /* [1] */
 	vertical-align: middle;      /* [2] */
 	white-space: nowrap;         /* [3] */
@@ -38,10 +38,12 @@
 	// You may want to change this
 	background-color: $btn-default-bg;
 
+	border-bottom: 2px solid darken($btn-default-bg, 10%);
+
 	&,
 	&:link,
 	&:visited {
-		color: #fff;
+		color: $color-text;
 	}
 
 	border-radius: 5px;
@@ -51,6 +53,7 @@
 	&:active,
 	&:focus {
 		background-color: $btn-default-bg-highlight;
+		border-bottom: 2px solid darken($btn-default-bg-highlight, 10%);
 	}
 
 	&,
@@ -77,8 +80,9 @@
 
 // Set the backgrounds
 // -------------------------
-.btn--primary {
+.button--primary {
 	background-color: $btn-primary-bg;
+	border-bottom: 2px solid darken($btn-primary-bg, 10%);
 
 	&,
 	&:link,
@@ -90,6 +94,24 @@
 	&:active,
 	&:focus {
 		background-color: $btn-primary-bg-highlight;
+		border-bottom: 2px solid darken($btn-primary-bg-highlight, 10%);
+	}
+}
+
+.button--header {
+	background-color: $btn-header-bg;
+	border: 0;
+	&,
+	&:link,
+	&:visited {
+		color: #fff;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $btn-header-bg-highlight;
+		border: 0;
 	}
 }
 
@@ -97,7 +119,7 @@
 // --------------------------------------------------
 // These all follow the same sizing rules as above; text is 1em, space around it
 // Large
-.btn--large {
+.button--large {
 	@include font-size($type-large);
 	line-height: 3;
 	height: 3em;
@@ -107,7 +129,7 @@
 }
 
 // Small
-.btn--small {
+.button--small {
 	@include font-size($type-small);
 	line-height: 1.5;
 	height: 1.5em;
@@ -116,7 +138,7 @@
 	border-radius: 3px;
 }
 
-.btn--pill {
+.button--pill {
 	padding-left: 1.5em;
 	padding-right: 1.5em;
 	border-radius: 100em;
@@ -124,14 +146,14 @@
 
 // Block button
 // -------------------------
-.btn--block {
+.button--block {
 	display: block;
 	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
 
 	// Vertically space out multiple block buttons
-	// same ad .btn--block + .btn--block
+	// same ad .button--block + .button--block
 	& + & {
 		margin-top: 10px;
 	}
@@ -142,13 +164,13 @@
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	&.btn--block {
+	&.button--block {
 		width: 100%;
 	}
 }
 
 // Make the button inherit sizing from its parent.
-.btn--natural {
+.button--natural {
 	vertical-align: baseline;
 	font-size: inherit;
 	line-height: inherit;
@@ -157,11 +179,18 @@ input[type="button"] {
 	padding-left: .5em;
 }
 
+.button--as-text{
+	border: 0;
+  	background: initial;
+  	color: $color-text;
+}
+
+
 
 /**
  * Close Button: for lightboxes etc
  */
-.btnClose {
+.buttonClose {
 	position: absolute;
 	right: 20px;
 	top: 20px;

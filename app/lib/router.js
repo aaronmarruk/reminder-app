@@ -29,22 +29,6 @@ var requireLogin = function() {
 	}
 }
 
-// Use attempting destructive function when not logged in
-// var requireDestructivePermissions = function() { 
-// 	if (! Meteor.user()) {
-// 		if (Meteor.loggingIn()) { 
-// 			this.render(this.loadingTemplate);
-// 		} else { 
-// 			this.render('accessDenied');
-// 		}
-// 	} else {
-// 		this.next(); 
-// 	}
-// }
-
-// Standard friendly request for login
-
-
 Router.route('/new', {name: 'reminderSubmit'});
 Router.route('/reminders', {name: 'remindersList'});
 
@@ -90,17 +74,6 @@ Router.onBeforeAction(requireLogin, {
 Router.onBeforeAction(isLoggedIn, {
 	only: ['splashPage', 'loginPage', 'registerPage']
 });
-
-// var clearFlash = 
-// Router.onAfterAction(clearFlash, {
-// 	only: [
-// 		'reminderSubmit', 
-// 		'reminderEdit', 
-// 		'remindersList', 
-// 		'splashPage', 
-// 		'loginPage'
-// 	]
-// });
 
 
 

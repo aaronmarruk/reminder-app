@@ -47,8 +47,3 @@ Template.reminderSubmit.events({
     	});
 	}
 });
-
-
-
-
-

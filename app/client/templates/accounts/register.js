@@ -5,7 +5,9 @@ Template.register.events({
         , password = t.find('[name=password]').value
         , passwordConfirmation = t.find('[name=passwordConfirmation]').value;
 
-        // Trim and validate the input
+        /*
+        * FIXME - Trim and validate your fields here...
+        */
 
         if (password === passwordConfirmation){
             Accounts.createUser({email: email, password : password}, function(err){
@@ -18,13 +20,11 @@ Template.register.events({
                 } else {
                 // Success. Account has been created and the user
                 // has logged in successfully. 
-                alert('Thanks for signing up, at some point we will give you a tou'+
-                    'r, but for now, go forth and create reminders!');
+                alert('Thanks for signing up, at some point we will give you' + 
+                  ' a tour, but for now, go forth and create reminders!');
                 }
             });
         }
-
-
         return false;
     }
 });

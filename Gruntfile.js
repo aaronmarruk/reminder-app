@@ -4,8 +4,6 @@ module.exports = function (grunt) {
 	var options = {
 		pkg: require('./package'), // <%=pkg.name%>
 
-		
-
 		/**
 		 * Grunt global vars
 		 * Many of the Grunt tasks use these vars
@@ -25,17 +23,9 @@ module.exports = function (grunt) {
 				
 				// <%=config.js.fileList%>
 				fileList : [
-					
-					
-
 					'js/helpers/console.js',
-					
-					
-					
-
 					'js/script.js'
 				]
-				
 			},
 
 			img : {
@@ -64,7 +54,6 @@ module.exports = function (grunt) {
 
 	// Load grunt configurations automatically
 	var configs = require('load-grunt-configs')(grunt, options);
-	
 
 	// Define the configuration for all the tasks
 	grunt.initConfig(configs);
@@ -89,12 +78,9 @@ module.exports = function (grunt) {
 	 */
 	// Default task
 	grunt.registerTask('default', [
-		
-		
-		
+
 		'dofilesexist:js',
 		'uglify',
-		
 		'sass:kickoff',
 		'autoprefixer:kickoff'
 		
@@ -107,11 +93,8 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('dev', [
 		
-		
-		
 		'dofilesexist:js',
 		'uglify',
-		
 		'sass:kickoff',
 		'autoprefixer:kickoff'
 		
@@ -123,8 +106,6 @@ module.exports = function (grunt) {
 	 * run jshint, uglify and sass:production
 	 */
 	grunt.registerTask('deploy', [
-		
-		
 		
 		'dofilesexist:js',
 		'uglify',
@@ -142,8 +123,6 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask("serve", [
 		
-		
-		
 		'dofilesexist:js',
 		'uglify',
 		
@@ -160,8 +139,6 @@ module.exports = function (grunt) {
 	 * run jquery builder, uglify, sass and autoprefixer
 	 */
 	grunt.registerTask('start', [
-		
-		
 		
 		'dofilesexist:js',
 		'uglify',
